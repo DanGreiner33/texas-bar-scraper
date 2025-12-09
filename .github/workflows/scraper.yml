@@ -1,0 +1,36 @@
+name: Texas Bar Scraper
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # Run weekly on Sundays at midnight
+  workflow_dispatch:  # Allow manual trigger
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4
+    
+    - name: Run scraper
+      run: |
+        python run_scrapers.py
+    
+    - name: Upload results
+      uses: actions/upload-artifact@v3
+      with:
+        name: attorney-data
+        path: |
+          *.csv
+          *.db
