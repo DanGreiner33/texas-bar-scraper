@@ -29,8 +29,8 @@ jobs:
         python run_scrapers.py
     
     - name: Upload results
-    uses: actions/upload-artifact@v4      with:
-        name: attorney-data
+    uses: actions/upload-artifact@v4
+      with:        name: attorney-data
         path: |
           *.csv
           *.db
