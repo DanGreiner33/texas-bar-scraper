@@ -9,9 +9,8 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-        env:
-        ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-    
+    env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
