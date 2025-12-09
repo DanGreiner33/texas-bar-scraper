@@ -168,4 +168,7 @@ This tool scrapes **publicly available** data from state bar directories. The da
 
 ## Support
 
+
+---
+*Last updated: December 2025*
 For issues or to add more states, please contact the development team.
