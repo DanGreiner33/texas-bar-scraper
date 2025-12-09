@@ -30,7 +30,7 @@ jobs:
     
     - name: Upload results
     uses: actions/upload-artifact@v4
-      with:
+  with:
           name: attorney-data
         path: |
           *.csv
